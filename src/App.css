@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: Lucida Console;
+	src: url(\lucon.ttf);
+	color: white;
+	list-style:none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
