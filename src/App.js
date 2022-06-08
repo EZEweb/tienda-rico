@@ -1,8 +1,8 @@
 import './App.css';
-import {MiPrimerComponente} from './components/NavBar'
+import {MiNav} from './components/NavBar'
 
 function App() {
-  return <MiPrimerComponente/>;
+  return <MiNav/>;
 }
 
 export default App;
