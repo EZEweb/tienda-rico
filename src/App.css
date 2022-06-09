@@ -62,13 +62,13 @@ div ul li{
   font-size: 0.8em;
 }
 
-.containerPagina section{
+.containerPagina{
   display: grid;
   grid-template-columns: repeat(3,1fr); 
   gap: 1em;
 }
 
-.containerPagina section > article{
+.containerPagina > article{
   background: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
@@ -76,7 +76,7 @@ div ul li{
   height: fit-content;
 }
 
-.containerPagina section > article h2 {
+.containerPagina > article h2 {
   padding: 5%;
   color: #ffffff;
   font-size: 1.5em;
@@ -84,7 +84,7 @@ div ul li{
   margin-bottom: 0.1em;
 }
 
-.containerPagina section > article p {
+.containerPagina > article p {
   padding: 5%;
 }
 

@@ -5,11 +5,11 @@ import {MiFooter} from './components/FooterBar';
 
 function App() {
   return (
-    <div>
+    <>
       <MiNav/>;
-      <MiItemListContainer/>;
+      <MiItemListContainer producto="afiche"/>;
       <MiFooter/>;
-    </div>
+    </>
   )
 }
 
