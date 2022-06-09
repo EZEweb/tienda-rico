@@ -15,6 +15,12 @@ div img{
   width: 8em;
 }
 
+div .cart-btn img{
+  width: 6%;
+  margin-top: -2%;
+  position: absolute;
+}
+
 div ul {
   display: flex;
   background: black;
@@ -23,6 +29,63 @@ div ul {
 
 div ul li{
   padding: 2em;
+}
+
+.footer{
+  padding: 2%;
+  background-color: black;
+  width: 100%;
+  height: 15%;
+  bottom: 0;
+  position: absolute;
+}
+
+.bajadita{
+	display:grid;
+	width:45%;
+	float:left;
+  padding-left:0;
+}
+
+.containerPagina{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.containerPagina h1,.containerPagina h2{
+  color:rgb(0, 0, 0);
+  text-align: left;
+}
+
+.containerPagina h2{
+  font-size: 0.8em;
+}
+
+.containerPagina section{
+  display: grid;
+  grid-template-columns: repeat(3,1fr); 
+  gap: 1em;
+}
+
+.containerPagina section > article{
+  background: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  margin:1em;
+  height: fit-content;
+}
+
+.containerPagina section > article h2 {
+  padding: 5%;
+  color: #ffffff;
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 0.1em;
+}
+
+.containerPagina section > article p {
+  padding: 5%;
 }
 
 @media (max-width: 1000px) {
