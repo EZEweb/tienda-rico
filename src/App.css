@@ -47,45 +47,18 @@ div ul li{
   padding-left:0;
 }
 
-.containerPagina{
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-.containerPagina h1,.containerPagina h2{
-  color:rgb(0, 0, 0);
-  text-align: left;
-}
-
-.containerPagina h2{
-  font-size: 0.8em;
-}
-
-.containerPagina{
-  display: grid;
-  grid-template-columns: repeat(3,1fr); 
-  gap: 1em;
-}
-
-.containerPagina > article{
+.containerPagina {
   background: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 1em;
   margin:1em;
-  height: fit-content;
 }
 
-.containerPagina > article h2 {
-  padding: 5%;
-  color: #ffffff;
+.containerPagina h2 {
   font-size: 1.5em;
-  font-weight: 100;
-  margin-bottom: 0.1em;
-}
-
-.containerPagina > article p {
   padding: 5%;
+  text-align: left;
+  color: #ffffff;
 }
 
 @media (max-width: 1000px) {
