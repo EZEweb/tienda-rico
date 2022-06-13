@@ -1,28 +1,17 @@
 import React from "react";
-import Logo from "./iso.gif";
-import Carrito from "./carrito.png";
+import {ImagenLogo} from './Logo';
+import {ImagenCarrito} from './CartWidget';
 
 export const MiNav = () => {
     return (
-        <div>
-        <MyNav/>
-        </div>
-    )
-}
-
-const MyNav = () => {
-    return (
         <div className="MiNavegador">
-            <img src={Logo}></img>
+            <ImagenLogo/>
             <ul>
                 <li><a href="identidad.html" >trabajos_</a></li>
                 <li><a href="carrito.html">merch_</a></li>
                 <li><a href="yo.html">contacto_</a></li>
                 <li id="carro">  
-                    <a class="cart-btn">
-                        <img src={Carrito}></img>
-                        <p class ="cantidad-en-carro">0</p>
-                    </a>
+                    <ImagenCarrito/>
                 </li>
                 </ul>
         </div>

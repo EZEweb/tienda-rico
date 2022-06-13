@@ -9,7 +9,7 @@ function App() {
     <>
       <MiNav/>;
       <ItemListContainer producto="afiche"/>;
-      <Contador/>
+      <Contador/>;
       <MiFooter/>;
     </>
   )
