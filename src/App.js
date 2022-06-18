@@ -1,18 +1,16 @@
 import './App.css';
 import {MiNav} from './components/NavBar';
-import {ItemListContainer} from './components/ItemListContainer';
-import {Contador} from './components/Contador';
 import {MiFooter} from './components/FooterBar';
+import ItemListContainer from './components/ItemListContainer'
 
 function App() {
-  return (
-    <>
-      <MiNav/>;
-      <ItemListContainer producto="afiche"/>;
-      <Contador/>;
-      <MiFooter/>;
-    </>
-  )
+    return (
+        <>
+            <MiNav/>
+            <ItemListContainer/>
+            <MiFooter/>
+        </>
+    )
 }
 
 export default App;
