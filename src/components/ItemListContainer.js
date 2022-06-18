@@ -9,14 +9,14 @@ function ItemListContainer () {
     let [items, setItems] = useState([])
 
     useEffect(() => {
-        customFetch(0, productos)
+        customFetch(3000, productos)
         .then (resultado => setItems(resultado))
         .catch (console.log ("Algo esta maliendo sal"))
     }, [items])
     return (
         <div className="containerPagina">
             {
-                items?.lenght <= 1 ? <h3>Cargando...</h3> : <ItemList productos = {items}/>
+                items?.lenght <= 1 ? <span class="loader"></span> : <ItemList productos = {items}/>
             }
         </div>
     )
