@@ -1,11 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import ItemList from './ItemList'
+import ItemDetail from './ItemDetail'
 import customFetch from '../recursos/customFetch'
 import productos from '../recursos/productos'
 
-function ItemListContainer () {
+function ItemDetailContainer () {
     let [items, setItems] = useState([])
 
     useEffect(() => {
@@ -14,12 +14,12 @@ function ItemListContainer () {
         .catch (console.log ("Algo esta maliendo sal"))
     }, [items])
     return (
-        <div className="containerPagina">
+        <div className="containerPaginaDetalle">
             {
-                items?.length <= 1 ? <div className="loader"></div> : <ItemList productos = {items}/>
+                items?.length <= 0 ? <div className="loader"></div> : <ItemDetail productos = {items}/>
             }
         </div>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

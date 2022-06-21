@@ -1,16 +1,6 @@
 import React from "react";
 
-
-
 export const MiFooter = () => {
-    return (
-        <div>
-        <MyFooter/>
-        </div>
-    )
-}
-
-const MyFooter = () => {
     return (
         <div className="footer">
             <div className="bajadita">

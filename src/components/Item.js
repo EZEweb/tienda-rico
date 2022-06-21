@@ -3,8 +3,8 @@ import React from "react";
 function Item ({titulo, foto, precio}){
     return(
         <article>
+            <img src={foto} alt="foto del producto" href="identidad.html"/>
             <h2>{titulo}</h2>
-            <img src={foto} alt="foto del producto"/>
             <p>${precio}</p>
         </article>
     )

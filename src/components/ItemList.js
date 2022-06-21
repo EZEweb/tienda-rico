@@ -15,16 +15,3 @@ function ItemList ({productos}){
 }
 
 export default ItemList
-
-// export const ItemList = (productos) => {
-//     return(
-// 		productos.map(e =>
-//  				<Item
-// 				key={e.id}
-// 				name={e.titulo}
-// 				imagen={e.foto}
-// 				price={e.precio}
-// 				/>
-// 			)
-//     )
-// }

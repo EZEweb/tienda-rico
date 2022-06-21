@@ -10,9 +10,12 @@
 }
 
 div img{
+  width: 8em;
+}
+
+.MiNavegador img{
   padding: 1.5em;
   position: absolute;
-  width: 8em;
 }
 
 div .cart-btn img{
@@ -51,29 +54,62 @@ div ul li{
   background: black;
   display: grid;
   height: 30em;
-  grid-template-columns: 25% 25% 25%;
+  grid-template-columns: 33% 33% 33%;
   gap: 1em;
   margin:1em;
   padding: 2%;
+  align-items: center;
+  justify-items: center;
 }
 
 .containerPagina h2 {
   font-size: 1.5em;
-  padding: 5%;
+  padding: 5% 0 5% 0;
   text-align: left;
   color: #ffffff;
+}
+
+.containerPaginaDetalle{
+  background: black;
+  display: grid;
+  height: 30em;
+  grid-template-columns: 50% 50%;
+  gap: 1em;
+  margin:1em;
+  padding: 2%;
+  align-items: center;
+  justify-items: center;
+}
+
+.containerPaginaDetalle h2{
+  padding: 5% 0 5% 0;
+}
+
+.containerPaginaDetalle img{
+  width: 40%;
+}
+
+.containerPaginaDetalle button{
+  margin-top: 5%;
+  border-radius: 2%;
+  color: black;
 }
 
 .loader {
   width: 48px;
   height: 48px;
   display: grid;
-  z-index: 99;
   position: relative;
   color: #FFF;
   border: 1px solid;
   box-sizing: border-box;
   animation: fill 2s linear infinite alternate;
+  margin-left: 150%;
+}
+
+.ItemDetail{
+  display: grid;
+  grid-template-columns: 50% 25% 25%;
 }
 
 @keyframes fill {
@@ -100,8 +136,7 @@ section{
 
 section > article{
   background: black;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin:1em;
   height: auto;
 }
@@ -114,8 +149,8 @@ section > article h2 {
 }
 
 section article img{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  position: relative;
   width: 10%;
 }
 
