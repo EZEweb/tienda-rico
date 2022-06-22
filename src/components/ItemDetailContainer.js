@@ -1,22 +1,21 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
 import customFetch from '../recursos/customFetch'
 import productos from '../recursos/productos'
 
 function ItemDetailContainer () {
-    let [items, setItems] = useState([])
+    let [item, setItem] = useState()
 
     useEffect(() => {
         customFetch(3000, productos)
-        .then (resultado => setItems(resultado))
+        .then (res => setItem(res.find(detail => detail.id === 0)))
         .catch (console.log ("Algo esta maliendo sal"))
-    }, [items])
+    },)
     return (
         <div className="containerPaginaDetalle">
             {
-                items?.length <= 0 ? <div className="loader"></div> : <ItemDetail productos = {items}/>
+                item? <ItemDetail {...item}/> : <div className="loader"></div>
             }
         </div>
     )
