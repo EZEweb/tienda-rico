@@ -9,7 +9,7 @@ function ItemListContainer () {
     let [items, setItems] = useState([])
 
     useEffect(() => {
-        customFetch(3000, productos)
+        customFetch(2000, productos)
         .then (resultado => setItems(resultado))
         .catch (console.log ("Algo esta maliendo sal"))
     }, [items])

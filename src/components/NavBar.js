@@ -1,15 +1,16 @@
 import React from "react";
 import {ImagenLogo} from './Logo';
 import {ImagenCarrito} from './CartWidget';
+import { Link } from "react-router-dom";
 
 export const MiNav = () => {
     return (
         <div className="MiNavegador">
-            <ImagenLogo/>
+            <Link to="/"><ImagenLogo/></Link>
             <ul>
-                <li><a href="identidad.html" >trabajos_</a></li>
-                <li><a href="carrito.html">merch_</a></li>
-                <li><a href="yo.html">contacto_</a></li>
+                <li><a>trabajos_</a></li>
+                <li><Link to="/ItemListContainer"><a>merch_</a></Link></li>
+                <li><a>contacto_</a></li>
                 <li id="carro">  
                     <ImagenCarrito/>
                 </li>

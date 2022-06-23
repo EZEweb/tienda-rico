@@ -8,7 +8,7 @@ function ItemDetailContainer () {
     let [item, setItem] = useState()
 
     useEffect(() => {
-        customFetch(3000, productos)
+        customFetch(2000, productos)
         .then (res => setItem(res.find(detail => detail.id === 0)))
         .catch (console.log ("Algo esta maliendo sal"))
     },)

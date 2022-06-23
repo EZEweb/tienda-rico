@@ -10,14 +10,14 @@ const productos = [
     },
 	{
         id: 1, 
-        titulo:'sticker',
+        titulo:'Sticker_',
         precio: 400,
         stock: 15,
         foto: 'https://picsum.photos/200/300'
     },
 	{
         id: 2, 
-        titulo:'pines',
+        titulo:'Pines_',
         precio: 200,
         stock: 45,
         foto: 'https://picsum.photos/200/301'
