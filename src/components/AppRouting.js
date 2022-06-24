@@ -1,15 +1,10 @@
-import {
-        BrowserRouter,
-        Routes,
-        Route,
-        useParams,
-        useNavigate,
-  } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {MiNav} from './NavBar';
 import {MiFooter} from './FooterBar';
 import ItemDetailContainer from './ItemDetailContainer';
 import ItemListContainer from './ItemListContainer';
-import Home from './Home'
+import Home from './Home';
+// import { FiltroApp } from './FiltroApp';
 
 export const AppRouting = () => {
     return <BrowserRouter>
@@ -18,10 +13,8 @@ export const AppRouting = () => {
                     <Route path="/" element={<Home/>}/>
                     <Route path="/ItemListContainer" element={<ItemListContainer/>}/>
                     <Route path="/ItemDetailContainer" element={<ItemDetailContainer/>}/>
+                    {/* <Route path="/FiltroApp" element={<Home/>}/> */}
                 </Routes>
                 <MiFooter/>
             </BrowserRouter>
 }
-
-// <Route path="/ItemListContainer" element={<ItemListContainer/>}><h2>ir a la lista</h2></Route>
-// <Route path="/ItemDetailContainer" element={<ItemDetailContainer/>}><h2>ir al detalle</h2></Route>

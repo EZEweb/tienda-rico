@@ -13,7 +13,7 @@ div img{
   width: 8em;
 }
 
-.MiNavegador img{
+.MiNav img{
   padding: 1.5em;
   position: absolute;
 }
@@ -69,6 +69,10 @@ div ul li{
   color: #ffffff;
 }
 
+.containerPagina ul li{
+  color: #FFF;
+}
+
 .containerPaginaDetalle{
   background: black;
   display: grid;
@@ -121,7 +125,6 @@ div ul li{
   }
 }
     
-
 button{
   color: red;
   width: auto;
@@ -158,6 +161,43 @@ section > article p {
   padding: 1em;
 }
 
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+.headerContainer .button {
+  background: none;
+  border: none;
+  text-transform: none;
+}
+.headerContainer .h2{
+  font-size: clamp(2rem,100%,3.75rem);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  row-gap: 2em;
+  padding-bottom: 1em;
+}
+.gridContainer .article {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gridContainer .article .img {
+max-width: 100%;
+width: 20em;
+transition: 0.5s ease-in-out;
+}
+
+.gridContainer .article .h3 {
+  font-family: "VT323,sans-serif";
+}
 @media (max-width: 1000px) {
   *{
     background-color: black;

@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 export const MiNav = () => {
     return (
-        <div className="MiNavegador">
+        <div className="MiNav">
             <Link to="/"><ImagenLogo/></Link>
             <ul>
-                <li><a>trabajos_</a></li>
-                <li><Link to="/ItemListContainer"><a>merch_</a></Link></li>
-                <li><a>contacto_</a></li>
+                <li>trabajos_</li>
+                <li><Link to="/ItemListContainer">merch_</Link></li>
+                <li>contacto_</li>
                 <li id="carro">  
                     <ImagenCarrito/>
                 </li>
-                </ul>
+            </ul>
         </div>
     )
 }

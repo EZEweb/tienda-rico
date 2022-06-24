@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 function ItemDetail ({titulo, foto, precio}){
     return(
         <>
-        <Link to="/ItemDetailContainer">
-        <img src={foto} alt="Foto del producto en detalle"/>
-        </Link>
+        <Link to="/ItemDetailContainer"><img src={foto} alt="Foto del producto en detalle"/></Link>
         <div className="Textos">
             <h1>{titulo}</h1>
             <h2>${precio}</h2>
@@ -21,4 +19,4 @@ function ItemDetail ({titulo, foto, precio}){
 
 export default ItemDetail
 
-{/* <Link to={`/ItemDetail/${id}`}> */}
+/* <Link to={`/ItemDetail/${id}`}> */
