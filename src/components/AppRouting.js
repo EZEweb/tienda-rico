@@ -4,7 +4,6 @@ import {MiFooter} from './FooterBar';
 import ItemDetailContainer from './ItemDetailContainer';
 import ItemListContainer from './ItemListContainer';
 import Home from './Home';
-// import { FiltroApp } from './FiltroApp';
 
 export const AppRouting = () => {
     return <BrowserRouter>
@@ -12,8 +11,9 @@ export const AppRouting = () => {
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/ItemListContainer" element={<ItemListContainer/>}/>
+                    {/* <Route path="/categoria/:categoria" element={<ItemListContainer/>}/> */}
                     <Route path="/ItemDetailContainer" element={<ItemDetailContainer/>}/>
-                    {/* <Route path="/FiltroApp" element={<Home/>}/> */}
+                    {/* <Route path="/item/:id" element={<ItemDetailContainer/>}/> */}
                 </Routes>
                 <MiFooter/>
             </BrowserRouter>

@@ -29,7 +29,7 @@ const productos = [
         categoria: 'pines',
         precio: 400,
         stock: 25,
-        foto: 'https://picsum.photos/200/302'
+        foto: 'https://picsum.photos/200/303'
     },
     {
         id: 4, 
@@ -37,7 +37,7 @@ const productos = [
         categoria: 'stickers',
         precio: 100,
         stock: 25,
-        foto: 'https://picsum.photos/200/302'
+        foto: 'https://picsum.photos/200/304'
     },
     {
         id: 5, 
@@ -45,7 +45,7 @@ const productos = [
         categoria: 'stickers',
         precio: 100,
         stock: 25,
-        foto: 'https://picsum.photos/200/302' 
+        foto: 'https://picsum.photos/200/305' 
     }
 ]
 

@@ -53,7 +53,7 @@ div ul li{
 .containerPagina {
   background: black;
   display: grid;
-  height: 30em;
+  height: 35em;
   grid-template-columns: 33% 33% 33%;
   gap: 1em;
   margin:1em;
