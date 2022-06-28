@@ -8,9 +8,9 @@ export const MiNav = () => {
         <div className="MiNav">
             <Link to="/"><ImagenLogo/></Link>
             <ul>
-                <li>trabajos_</li>
-                <li><Link to="/ItemListContainer">merch_</Link></li>
-                <li>contacto_</li>
+                <li><Link to='/categoria/afiches'>afiches</Link></li>
+                <li><Link to='/categoria/pines'>pines</Link></li>
+                <li><Link to='/categoria/stickers'>stickers</Link></li>
                 <li id="carro">  
                     <ImagenCarrito/>
                 </li>

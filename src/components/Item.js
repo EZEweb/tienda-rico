@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 function Item ({titulo, foto, precio, id}){
     return(
         <article>
-            <Link to="/ItemDetailContainer">
-            <img src={foto} alt={`/ItemDetail/${id}`}/>
+            <Link to={`/item/${id}`}>
+            <img src={foto} alt={"foto del producto"}/>
             <h2>{titulo}</h2>
             <p>${precio}</p>
             </Link>
