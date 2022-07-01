@@ -74,8 +74,8 @@ div ul li{
 }
 
 .contador{
-  background-color:white;
-  color: red;
+  padding:5% 0 2% 0;
+  
 }
 .containerPaginaDetalle{
   background: black;
@@ -101,6 +101,7 @@ div ul li{
   margin-top: 5%;
   border-radius: 2%;
   color: black;
+  margin-left: 2%;
 }
 
 .loader {

@@ -5,6 +5,7 @@ const productos = [
         categoria: 'afiches',
         precio: 800,
         stock: 25,
+        inicial: 1,
         foto: 'https://picsum.photos/200/302'  
     },
 	{
@@ -13,6 +14,7 @@ const productos = [
         categoria: 'afiches',
         precio: 800,
         stock: 15,
+        inicial: 1,
         foto: 'https://picsum.photos/200/300'
     },
 	{
@@ -21,6 +23,7 @@ const productos = [
         categoria: 'pines',
         precio: 400,
         stock: 45,
+        inicial: 1,
         foto: 'https://picsum.photos/200/301'
     },
     {
@@ -29,6 +32,7 @@ const productos = [
         categoria: 'pines',
         precio: 400,
         stock: 25,
+        inicial: 1,
         foto: 'https://picsum.photos/200/303'
     },
     {
@@ -37,6 +41,7 @@ const productos = [
         categoria: 'stickers',
         precio: 100,
         stock: 25,
+        inicial: 1,
         foto: 'https://picsum.photos/200/304'
     },
     {
@@ -45,6 +50,7 @@ const productos = [
         categoria: 'stickers',
         precio: 100,
         stock: 25,
+        inicial: 1,
         foto: 'https://picsum.photos/200/305' 
     }
 ]

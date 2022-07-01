@@ -3,16 +3,23 @@ import { Link } from 'react-router-dom'
 import Contador from './Contador'
 
 
-function ItemDetail ({titulo, foto, precio, id}){
+function ItemDetail ({titulo, foto, precio, id, inicial, stock}){
+    // const onAdd = (valor,ammount)=>{
+       
+    //     setItemcount(valor)
+    //     // console.log(ammount,item)
+    //     addItem(item,ammount)
+    // }
     return(
         <>
         <Link to="/ItemDetailContainer"><img src={foto} alt={`/ItemDetail/${id}`}/></Link>
         <div className="Textos">
             <h1>{titulo}</h1>
             <h2>${precio}</h2>
-            <Contador/>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button>Comprar</button>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <br></br>
+            <Contador inicial={inicial} stock={stock}/>
+            <Link to='/Home'><button>Comprar</button></Link>
         </div>
         </>
     )
