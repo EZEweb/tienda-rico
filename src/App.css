@@ -73,6 +73,10 @@ div ul li{
   color: #FFF;
 }
 
+.contador{
+  background-color:white;
+  color: red;
+}
 .containerPaginaDetalle{
   background: black;
   display: grid;

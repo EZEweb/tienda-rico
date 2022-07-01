@@ -8,15 +8,15 @@ import ItemListContainer from './components/ItemListContainer';
 
 function App() {
     return (
-    <BrowserRouter>
+        <BrowserRouter>
         <MiNav/>
-        <Routes>
-            <Route path="/" element={<ItemListContainer/>}/>
-            <Route path="/categoria/:categoria" element={<ItemListContainer/>}/>
-            <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-        </Routes>
+            <Routes>
+                <Route path="/" element={<ItemListContainer/>}/>
+                <Route path="/categoria/:categoria" element={<ItemListContainer/>}/>
+                <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            </Routes>
         <MiFooter/>
-    </BrowserRouter>
+        </BrowserRouter>
     )
 }
 

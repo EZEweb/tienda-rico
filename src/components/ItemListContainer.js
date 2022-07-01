@@ -13,7 +13,7 @@ function ItemListContainer () {
         customFetch(1000, productos)
         .then(resultado =>{categoria ? setItems (resultado.filter(items => items.categoria=== categoria)): setItems(resultado)})
         .catch (console.log ("Algo esta maliendo sal"))
-        .finally()
+        .finally(<div className="loader"></div>)
     }, [categoria])
     return (
         <div className="containerPagina">

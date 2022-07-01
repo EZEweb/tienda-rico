@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 export const Contador = (props) => {
     const {stock} = props;
-	const [numero, Cantidad] = useState(1);
+	const [numero, setNumero] = useState(1);
     if (numero > 0 && stock >= numero){
 	const Suma = () => {
-		Cantidad(numero + 1);
+		setNumero(numero + 1);
 	};
     const Resta =() =>{
-        Cantidad(numero -1);
+        setNumero(numero -1);
     };
 	return (
-		<div className="containerPagina">
+		<div className="contador">
 			<h4>{`Tenes ${numero} productos en el carrito`}</h4>
 			{numero && <h5>{new Date().toLocaleString()}</h5>}
 			<button onClick={(evento) => Suma()}>Sumá</button>
             <button onClick={(evento) => Resta ()}>Restá</button>
 		</div>
-	);
+	)
 }
 };
+
+export default Contador
