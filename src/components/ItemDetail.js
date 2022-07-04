@@ -10,7 +10,7 @@ function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
     console.log (contador);
 
     const onAdd = (contador)=>{
-        return setContador(+1)
+        return setContador(contador+1)
     }
     // const onAdd = ()=>{
     //     if (contador===0){

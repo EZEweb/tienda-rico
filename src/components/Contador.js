@@ -4,9 +4,6 @@ import { useState } from 'react'
 export const Contador = ({stock, inicial, onAdd}) => {
 	
 	const [numero, setNumero] = useState(inicial)
-	
-	const num0 = numero === 1
-	const numMax = numero === stock
 
 	const suma = () => {
 		if (numero < stock){
@@ -29,14 +26,14 @@ export const Contador = ({stock, inicial, onAdd}) => {
 		<>
 			<div className="contador">
 				<h4>{`Estás añadiendo ${numero} productos al carrito`}</h4>
-				{num0
+				{numero <= inicial
 				?<button className='botonoff' onClick={()=>{resta()}}>-</button>
 				:<button className='button' onClick={()=>{resta()}}>-</button>}
-				{numMax
+				{numero >= stock
               	?<button className='botonoff' onClick={()=>{suma()}}>+</button>
               	:<button className='button' onClick={()=>{suma()}}>Agregar al carrito</button>}
 			</div>
-			{num0
+			{numero <= inicial || numero > stock
 			? <button className='botonoff' >Agregar al carrito</button>
 			: <button onClick={onAdd}>Agregar al carrito</button>
 			}
