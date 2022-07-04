@@ -4,22 +4,15 @@ import { useState } from 'react'
 import Contador from './Contador'
 
 
-function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
+function ItemDetail ({titulo,foto,precio,id,inicial,stock,numero}){
     
-    const [contador,setContador] = useState(0)
+    const [contador,setContador] = useState(inicial)
     console.log (contador);
 
-    const onAdd = (contador)=>{
-        return setContador(contador+1)
+    const onAdd = (numero)=>{
+        setContador((preContador)=>preContador+numero)
+        return console.log(contador)
     }
-    // const onAdd = ()=>{
-    //     if (contador===0){
-    //     return setContador(contador=>contador +1);
-    // }
-    // }
-//     const ButtonComponent = ({ stock, changeStock }) => {
-//   return <button onClick={() => changeStock(stock + 1)}>Agregar 1</button>;
-// };
 
     return(
         <>

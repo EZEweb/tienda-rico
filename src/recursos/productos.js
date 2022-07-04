@@ -5,7 +5,7 @@ const productos = [
         categoria: 'afiches',
         precio: 800,
         stock: 25,
-        inicial: 1,
+        inicial: 0,
         foto: 'https://picsum.photos/200/302'  
     },
 	{
