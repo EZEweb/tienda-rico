@@ -12,7 +12,7 @@ function ItemListContainer () {
     useEffect(() => {
         customFetch(1000, productos)
         .then(resultado =>{categoria ? setItems (resultado.filter(items => items.categoria=== categoria)): setItems(resultado)})
-        .catch (console.log ("Algo esta maliendo sal"))
+        .catch (console.log ())
         .finally(<div className="loader"></div>)
     }, [categoria])
     return (

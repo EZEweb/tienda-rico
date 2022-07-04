@@ -50,6 +50,10 @@ div ul li{
   padding-left:0;
 }
 
+.botonoff{
+  display: none;
+}
+
 .containerPagina {
   background: black;
   display: grid;
