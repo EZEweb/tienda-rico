@@ -21,25 +21,25 @@ export const Contador = ({stock, inicial, onAdd}) => {
     }
 
 	// esto para luego
-	const handleItemcount = (e)=>{
-        e.stopPropagation()
-		// var cantidad = numero;
-        onAdd(false)
-    }
+	// const handleItemcount = (e)=>{
+    //     e.stopPropagation()
+    //     onAdd()
+    // }
 	return (
 		<>
 			<div className="contador">
 				<h4>{`Estás añadiendo ${numero} productos al carrito`}</h4>
 				{num0
-				?<button className='botonoff' onClick={()=>{suma()}}>-</button>
+				?<button className='botonoff' onClick={()=>{resta()}}>-</button>
 				:<button className='button' onClick={()=>{resta()}}>-</button>}
 				{numMax
               	?<button className='botonoff' onClick={()=>{suma()}}>+</button>
-              	:<button className='button' onClick={()=>{suma()}}>+</button>}
+              	:<button className='button' onClick={()=>{suma()}}>Agregar al carrito</button>}
 			</div>
-			{num0 === 1
+			{num0
 			? <button className='botonoff' >Agregar al carrito</button>
-			: <button onClick={handleItemcount}>Agregar al carrito</button>}
+			: <button onClick={onAdd}>Agregar al carrito</button>
+			}
 		</>
 	)
 }
