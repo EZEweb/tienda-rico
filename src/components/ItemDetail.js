@@ -6,12 +6,20 @@ import Contador from './Contador'
 
 function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
     
-    const [contador,setContador] = useState(false)
+    const [contador,setContador] = useState(0)
     console.log (contador);
 
-    const onAdd = ()=>{
-        return setContador(true)
+    const onAdd = (contador)=>{
+        return setContador(+1)
     }
+    // const onAdd = ()=>{
+    //     if (contador===0){
+    //     return setContador(contador=>contador +1);
+    // }
+    // }
+//     const ButtonComponent = ({ stock, changeStock }) => {
+//   return <button onClick={() => changeStock(stock + 1)}>Agregar 1</button>;
+// };
 
     return(
         <>
