@@ -1,16 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import Contador from './Contador'
+import ItemCount from './ItemCount'
 
 
-function ItemDetail ({titulo,foto,precio,id,inicial,stock,numero}){
+function ItemDetail ({titulo,foto,precio,id,inicial,stock,cantidad}){
     
-    const [contador,setContador] = useState(inicial)
+    const [contador,setContador] = useState(0)
     console.log (contador);
 
-    const onAdd = (numero)=>{
-        setContador((preContador)=>preContador+numero)
+    const onAdd = (cantidad)=>{
+        setContador((cantidad))
         return console.log(contador)
     }
 
@@ -25,7 +25,7 @@ function ItemDetail ({titulo,foto,precio,id,inicial,stock,numero}){
             <br></br>
             {contador
             ?<Link to='/Home'><button>Finalizar mi compra</button></Link>
-            :<Contador inicial={inicial} stock={stock} onAdd={onAdd} />}
+            :<ItemCount inicial={inicial} stock={stock} onAdd={onAdd} />}
         </div>
         </>
     )
