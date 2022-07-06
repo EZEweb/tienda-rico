@@ -12,7 +12,7 @@ export const MiNav = () => {
                 <li><Link to='/categoria/pines'>pines</Link></li>
                 <li><Link to='/categoria/stickers'>stickers</Link></li>
                 <li id="carro">  
-                    <ImagenCarrito/>
+                    <Link to="/cart"><ImagenCarrito/></Link>
                 </li>
             </ul>
         </div>

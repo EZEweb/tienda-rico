@@ -7,13 +7,13 @@ export const ItemCount = ({stock, inicial, onAdd}) => {
 
 	const suma = () => {
 		if (cantidad < stock){
-			return setCantidad(cantidad=>cantidad + 1);
+			return setCantidad(cantidad + 1);
 		}
 	}
 
     const resta =() =>{
 		if (cantidad > inicial){
-        	return setCantidad(cantidad=>cantidad -1);
+        	return setCantidad(cantidad -1);
 		}
     }
 
@@ -34,10 +34,3 @@ export const ItemCount = ({stock, inicial, onAdd}) => {
 }
 
 export default ItemCount
-
-
-	// esto para luego
-	// const handleItemcount = (e)=>{
-    //     e.stopPropagation()
-    //     onAdd()
-    // }

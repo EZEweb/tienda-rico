@@ -1,63 +1,47 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { CartContext } from './CartContext'
+import { useContext } from 'react'
 import ItemCount from './ItemCount'
 
 
-function ItemDetail ({titulo,foto,precio,id,inicial,stock,cantidad}){
-    
+function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
     const [contador,setContador] = useState(0)
+    const {addItem,addItemRepeated,isInCart,itemsCart,item} = useContext(CartContext)
     console.log (contador);
-
-    const onAdd = (cantidad)=>{
+ 
+    const onAdd = (cantidad,ammount)=>{
         setContador((cantidad))
-        return console.log(contador)
-    }
+        if(isInCart(id)){
+            addItem(item,ammount)
+            console.log(item)
+        }else{
+            addItemRepeated(item,ammount)
+        }//estimo que acá está el error // la función onAdd usa los valores cantidad y ammount que los traigo local y x context
+    }//la funcion onAdd sigue actualizando el estado de contador
+    //después, en el if, reviso si el producto que añado ya está. si no, lo suma x addItem. Si si, lo añade pero x addItemrepeated
+
+    // const onAdd = (cantidad,ammount)=>{
+    //     setContador((cantidad))
+    //     return console.log(contador)
+    // }//esto estaba bien :')
 
     return(
         <>
         <Link to="/ItemDetailContainer"><img src={foto} alt={`/ItemDetail/${id}`}/></Link>
         <div className="Textos">
             <h1>{titulo}</h1>
-            {/* {console.log({titulo})} */}
             <h2>${precio}</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <br></br>
             {contador
             ?<Link to='/Home'><button>Finalizar mi compra</button></Link>
-            :<ItemCount inicial={inicial} stock={stock} onAdd={onAdd} />}
+            :<ItemCount inicial={inicial} stock={stock} onAdd={onAdd} addItem={addItem} />}
+            {console.log(itemsCart)}
         </div>
         </>
     )
 }
 
 export default ItemDetail
-
-
-
-// function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
-    
-//     const [contador,setContador] = useState()
-//     console.log (contador);
-
-//     const onAdd = (contador)=>{
-//         return setContador = () => contador=true
-        
-//     }
-
-//     return(
-//         <>
-//         <Link to="/ItemDetailContainer"><img src={foto} alt={`/ItemDetail/${id}`}/></Link>
-//         <div className="Textos">
-//             <h1>{titulo}</h1>
-//             {/* {console.log({titulo})} */}
-//             <h2>${precio}</h2>
-//             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-//             <br></br>
-//             {contador
-//             ?<Contador inicial={inicial} stock={stock} onAdd={onAdd} />
-//             :<button onClick={onAdd}>Finalizar mi compra</button>}
-//         </div>
-//         </>
-//     )
-// }
