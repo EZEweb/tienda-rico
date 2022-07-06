@@ -5,27 +5,17 @@ import { CartContext } from './CartContext'
 import { useContext } from 'react'
 import ItemCount from './ItemCount'
 
-
-function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
+function ItemDetail (item){
+    
+    const {titulo,foto,precio,id,inicial,stock}=item
     const [contador,setContador] = useState(0)
-    const {addItem,addItemRepeated,isInCart,itemsCart,item} = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
     console.log (contador);
  
-    const onAdd = (cantidad,ammount)=>{
-        setContador((cantidad))
-        if(isInCart(id)){
-            addItem(item,ammount)
-            console.log(item)
-        }else{
-            addItemRepeated(item,ammount)
-        }//estimo que acá está el error // la función onAdd usa los valores cantidad y ammount que los traigo local y x context
-    }//la funcion onAdd sigue actualizando el estado de contador
-    //después, en el if, reviso si el producto que añado ya está. si no, lo suma x addItem. Si si, lo añade pero x addItemrepeated
-
-    // const onAdd = (cantidad,ammount)=>{
-    //     setContador((cantidad))
-    //     return console.log(contador)
-    // }//esto estaba bien :')
+    const onAdd = (cantidad)=>{
+        setContador(cantidad)
+        addItem(item,cantidad)
+    }
 
     return(
         <>
@@ -38,10 +28,18 @@ function ItemDetail ({titulo,foto,precio,id,inicial,stock}){
             {contador
             ?<Link to='/Home'><button>Finalizar mi compra</button></Link>
             :<ItemCount inicial={inicial} stock={stock} onAdd={onAdd} addItem={addItem} />}
-            {console.log(itemsCart)}
         </div>
         </>
     )
 }
 
 export default ItemDetail
+
+    //estimo que acá está el error // la función onAdd usa los valores cantidad y ammount que los traigo local y x context
+    //la funcion onAdd sigue actualizando el estado de contador
+    //después, en el if, reviso si el producto que añado ya está. si no, lo suma x addItem. Si si, lo añade pero x addItemrepeated
+
+    // const onAdd = (cantidad,ammount)=>{
+    //     setContador((cantidad))
+    //     return console.log(contador)
+    // }//esto estaba bien :')

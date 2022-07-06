@@ -6,7 +6,7 @@ const productos = [
         precio: 800,
         stock: 25,
         inicial: 1,
-        foto: 'https://picsum.photos/200/302'  
+        foto: 'https://i.ibb.co/FJRz4HN/afiche.jpg'  
     },
 	{
         id: 1, 
@@ -15,7 +15,7 @@ const productos = [
         precio: 800,
         stock: 15,
         inicial: 1,
-        foto: 'https://picsum.photos/200/300'
+        foto: 'https://i.ibb.co/9YXv4xt/asd.png'
     },
 	{
         id: 2, 
@@ -33,7 +33,7 @@ const productos = [
         precio: 400,
         stock: 25,
         inicial: 1,
-        foto: 'https://picsum.photos/200/303'
+        foto: 'https://i.ibb.co/8XKYVTT/btcc.jpg'
     },
     {
         id: 4, 
