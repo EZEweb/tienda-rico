@@ -26,7 +26,7 @@ function ItemDetail (item){
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <br></br>
             {contador
-            ?<Link to='/Home'><button>Finalizar mi compra</button></Link>
+            ?<Link to='/Cart'><button>Ir a mi carrito</button></Link>
             :<ItemCount inicial={inicial} stock={stock} onAdd={onAdd} addItem={addItem} />}
         </div>
         </>

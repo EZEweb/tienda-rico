@@ -8,13 +8,18 @@ export const CartContextProvider = ({children})=>{
     const isInCart = (id) => {
         const inCart = itemsCart.find(item => item.id === id)
         return inCart
-      }//aca reviso si está o no en el carro, mediante el id
-
-    function addItem(item,cantidad){
-        item.cantidad = cantidad;
-        const newItemsCart = [...itemsCart,item]
-        setItemsCart(newItemsCart)
-    }   //aca añado al array determinado item
+    }//revisa el carro a partir de una busqueda en el array, x id
+    
+    const addItem = (item, contador) => {
+        isInCart(item.id)//ya está en carro?
+        ?setItemsCart(itemsCart.map(venta => {
+            if(venta.id === item.id){
+                venta.contador += contador
+            }
+            return venta
+        }))//si ya está, se guarda en el mismo array, con más cantidad, la que el contador manda
+        :setItemsCart([...itemsCart, {...item, contador: contador}])//si no está, suma uno nuevo
+    }
 
     function clear () {
         setItemsCart([])  
@@ -32,39 +37,3 @@ export const CartContextProvider = ({children})=>{
 }
 
 export default CartContextProvider
-
-        
-    // function isInCart (id) {
-    //     if(itemsCart.find(item=>item.id === id)===undefined){
-    //         return true
-    //     }else {
-    //         return false
-    //     }
-    // }
-    // const [cartCantidad,setCartCantidad] = useState(0)//estado de la cantidad
-    // const [totalprecio,setTotalprecio] = useState(0)//estado del precio total
-
-    // useEffect (() => {
-    //     const cant = 0;
-    //     const precio = 0;
-    //     itemsCart.forEach(element => {
-    //         cant = cant+element.ammount
-    //     });
-    //     itemsCart.forEach(element =>{
-    //         precio = precio +(element.precio)*(element.ammount)
-    //     })
-    //     setCartCantidad(cant)//se cambia la cantidad
-    //     setTotalprecio(precio)//se cambia el precio
-    // }, [itemsCart])//effect para actualizar cantidad y precio x item
-
-    // function checkitems(){
-    //     return console.log(itemsCart)
-    // }
-
-        // function addItemRepeated(item,ammount){
-    //     const itemtoedit = itemsCart.find(itemarr=>itemarr.id===item.id)
-    //     const prevammount = item.ammount;
-    //     itemtoedit.ammount = ammount+prevammount
-    //     const arrayfiltrado = itemsCart.filter((itemarr)=>itemarr.id !== item.id )
-    //     setItemsCart([...arrayfiltrado,itemtoedit])
-    // }//añado item repetido
