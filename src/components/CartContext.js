@@ -10,15 +10,15 @@ export const CartContextProvider = ({children})=>{
         return inCart
     }//revisa el carro a partir de una busqueda en el array, x id
     
-    const addItem = (item, contador) => {
-        isInCart(item.id)//ya está en carro?
-        ?setItemsCart(itemsCart.map(venta => {
-            if(venta.id === item.id){
-                venta.contador += contador
-            }
-            return venta
-        }))//si ya está, se guarda en el mismo array, con más cantidad, la que el contador manda
-        :setItemsCart([...itemsCart, {...item, contador: contador}])//si no está, agrega uno nuevo, a todo lo que ya hay
+    const addItem = (item, cantidad) => {
+        if(isInCart(item.id)){
+            setItemsCart(itemsCart.map(venta => {
+            return venta.id === item.id //esta ya el producto cargado?
+            ?{...item, cantidad: item.cantidad + cantidad}//si es que si, sumate capo dale
+            :venta}))//sino, sos la nueva venta
+        }else{
+            setItemsCart([...itemsCart, {...item, cantidad: cantidad}])//si no está, agrega uno nuevo, a todo lo que ya hay
+        }//si ya está, se guarda en el mismo array, con más cantidad, la que el contador manda
     }
 
     const clear = (item) => {

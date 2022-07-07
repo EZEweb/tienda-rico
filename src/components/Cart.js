@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const Cart=()=>{
     const {clear,itemsCart,removeItem} = useContext(CartContext)//traigo x context la funcion clear y los estados itemsCart y totalprice
     // const precioporitem = itemsCart.reduce((item) => (item.precio * item.contador) * item.contador)
-    const preciototal = itemsCart.reduce((total, item) =>  (item.precio * item.contador) + total, 0)
+    const preciototal = itemsCart.reduce((total, item) =>  (item.precio * item.cantidad) + total, 0)
     
     return (
         <>
@@ -22,7 +22,7 @@ const Cart=()=>{
                             <h1><br></br>{venta.titulo}</h1>
                             <br></br>
                             <h4>
-                                Tienes {venta.contador} productos en tu carrito
+                                Tienes {venta.cantidad} productos en tu carrito
                             </h4>
                             <button onClick={() => removeItem(venta.id)}>Borrar unidad</button>
                         </div>

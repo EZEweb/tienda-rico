@@ -34,12 +34,3 @@ function ItemDetail (item){
 }
 
 export default ItemDetail
-
-    //estimo que acá está el error // la función onAdd usa los valores cantidad y ammount que los traigo local y x context
-    //la funcion onAdd sigue actualizando el estado de contador
-    //después, en el if, reviso si el producto que añado ya está. si no, lo suma x addItem. Si si, lo añade pero x addItemrepeated
-
-    // const onAdd = (cantidad,ammount)=>{
-    //     setContador((cantidad))
-    //     return console.log(contador)
-    // }//esto estaba bien :')

@@ -8,7 +8,7 @@ export const CartWidget = () => {
 
     let numerito = 0
     itemsCart.map((num) =>(
-        numerito = numerito + num.contador
+        numerito = numerito + num.cantidad
     ))
     return (
         <div className="botoncarrito">
