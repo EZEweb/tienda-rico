@@ -1,4 +1,7 @@
 import React from "react";
+import LinkedIn from './imagenes/linkedin.png'
+import Instagram from './imagenes/instagram.png'
+import Behance from './imagenes/behance.png'
 
 export const MiFooter = () => {
     return (
@@ -9,9 +12,9 @@ export const MiFooter = () => {
             <div className="redes">
                 <li>¡Encontrame por acá!:</li>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li href={'https://www.linkedin.com/in/eze-web/'} target={'_blank'}><img src={LinkedIn} alt="icono de LinkedIn"></img></li>
+                    <li href={'https://www.instragram.com/EZE_404_'} target={'_blank'}><img src={Instagram} alt="icono de Instagram"></img></li>
+                    <li href={'https://www.behance.com/EZE_'} target={'_blank'}><img src={Behance} alt="icono de Behance"></img></li>
                 </ul>
             </div>
         </div>

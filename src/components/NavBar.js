@@ -1,6 +1,6 @@
 import React from "react";
 import {ImagenLogo} from './Logo';
-import {ImagenCarrito} from './CartWidget';
+import {CartWidget} from './CartWidget';
 import { Link } from "react-router-dom";
 
 export const MiNav = () => {
@@ -12,7 +12,7 @@ export const MiNav = () => {
                 <li><Link to='/categoria/pines'>pines</Link></li>
                 <li><Link to='/categoria/stickers'>stickers</Link></li>
                 <li id="carro">  
-                    <Link to="/cart"><ImagenCarrito/></Link>
+                    <Link to="/cart"><CartWidget/></Link>
                 </li>
             </ul>
         </div>

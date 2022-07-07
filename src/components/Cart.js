@@ -45,21 +45,3 @@ const Cart=()=>{
 }
 
 export default Cart
-
-        // <>
-        //     {itemsCart.length===0//condicion x si el array está vacio
-        //     ?<EmptyCart/>//si la condición se cumple (el carro está vacio), se despliega ese componente
-        //     :<div className='containerPaginaDetalle'>
-        //     {itemsCart.map( (item)=><ItemCart key={item.id} item={item}/>)}
-        //     <section>
-        //         <div>
-        //             <p>Precio total:</p>
-        //         </div>
-        //         <div>
-        //             <button onClick={removeItem} className='button'>Borrar Item</button>
-        //         </div>
-        //     </section>
-        //     <button onClick={clear} className='button'>Borrar Todo</button>
-        //     </div>//sino zaz acá te muestro tu carrito
-        //     }
-        // </>

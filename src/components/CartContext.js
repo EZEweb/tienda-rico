@@ -18,15 +18,15 @@ export const CartContextProvider = ({children})=>{
             }
             return venta
         }))//si ya está, se guarda en el mismo array, con más cantidad, la que el contador manda
-        :setItemsCart([...itemsCart, {...item, contador: contador}])//si no está, suma uno nuevo
+        :setItemsCart([...itemsCart, {...item, contador: contador}])//si no está, agrega uno nuevo, a todo lo que ya hay
     }
 
-    function clear () {
+    const clear = (item) => {
         setItemsCart([])  
     }//aca limpio todo el array
 
-    function removeItem (itemid) {
-        setItemsCart (itemsCart.filter((item)=>item.id !== itemid ))
+    const removeItem = (remove) =>{
+        setItemsCart (itemsCart.filter((item)=>item.id !== remove ))
     }//aca remuevo lo seleccionado en el array //acortado
 
     return(

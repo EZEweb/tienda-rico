@@ -1,11 +1,22 @@
-import React from "react";
-import Carrito from "./imagenes/carrito.png";
+import React from 'react'
+import Carrito from './imagenes/carrito.png'
+import {CartContext} from './CartContext'
+import {useContext} from 'react'
 
-export const ImagenCarrito = () => {
+export const CartWidget = () => {
+    const {itemsCart} = useContext(CartContext)
+
+    let numerito = 0
+    itemsCart.map((num) =>(
+        numerito = numerito + num.contador
+    ))
     return (
-        <div className="cart-btn">
+        <div className="botoncarrito">
+            {numerito
+            ?<p>{numerito}</p>
+            :<p style={{color:"black"}}>0</p>
+            }
             <img src={Carrito} alt="foto del carrito"></img>
-            <p className ="cantidad-en-carro">0</p>
         </div>
     )
 }

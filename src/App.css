@@ -18,9 +18,13 @@ div img{
   position: absolute;
 }
 
-div .cart-btn img{
-  width: 8%;
-  margin-top: -2%;
+.botoncarrito p{
+  color: white;
+}
+
+.botoncarrito img{
+  width: 6rem;
+  margin: -4% 0 -1% 0;
   position: absolute;
 }
 
@@ -34,6 +38,11 @@ div ul li{
   padding: 2em;
 }
 
+.footer div ul {
+  padding-left: 0;
+}
+
+
 .footer{
   display: grid;
   padding: 2%;
@@ -43,6 +52,10 @@ div ul li{
   bottom: 0;
   position: relative;
   grid-template-columns: 50% 50%;
+}
+
+.footer img{
+  width: 2rem;
 }
 
 .bajadita{
@@ -215,6 +228,12 @@ transition: 0.5s ease-in-out;
   *{
     background-color: black;
   }
+  
+  .botoncarrito img{
+    width: 100%;
+    margin-top: -2%;
+    position: absolute;
+  }
 
   .MiNav{
     height: auto;
@@ -223,6 +242,7 @@ transition: 0.5s ease-in-out;
 
   .MiNav img{
     position: relative;
+    width: 8rem;
   }
 
   div{
