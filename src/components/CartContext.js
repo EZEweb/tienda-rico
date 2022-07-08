@@ -9,13 +9,11 @@ export const CartContextProvider = ({children})=>{
         const inCart = itemsCart.find(item => item.id === id)
         return inCart
     }//revisa el carro a partir de una busqueda en el array, x id
-    
+
     const addItem = (item, cantidad) => {
         if(isInCart(item.id)){
-            setItemsCart(itemsCart.map(venta => {
-            return venta.id === item.id //esta ya el producto cargado?
-            ?{...item, cantidad: item.cantidad + cantidad}//si es que si, sumate capo dale
-            :venta}))//sino, sos la nueva venta
+            setItemsCart(itemsCart.map((venta) =>
+            venta.id === item.id?{...venta, cantidad: venta.cantidad + cantidad}:venta)) //esta ya el producto cargado?//si es que si, sumate capo dale//sino, sos la nueva venta
         }else{
             setItemsCart([...itemsCart, {...item, cantidad: cantidad}])//si no está, agrega uno nuevo, a todo lo que ya hay
         }//si ya está, se guarda en el mismo array, con más cantidad, la que el contador manda
