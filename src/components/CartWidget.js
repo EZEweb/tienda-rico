@@ -12,10 +12,7 @@ export const CartWidget = () => {
     ))
     return (
         <div className="botoncarrito">
-            {numerito
-            ?<p>{numerito}</p>
-            :<p style={{color:"black"}}>0</p>
-            }
+            {numerito}
             <img src={Carrito} alt="foto del carrito"></img>
         </div>
     )

@@ -1,18 +1,22 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
-import customFetch from '../recursos/customFetch'
-import productos from '../recursos/productos'
+// import customFetch from '../recursos/customFetch'
+// import productos from '../recursos/productos'
 import { useParams } from 'react-router-dom'
-
+import { doc, getDoc,getFirestore } from "firebase/firestore";
 function ItemDetailContainer () {
     let [item, setItem] = useState()
-    const {id} = useParams ()
+    const {id} = useParams ([])
 
     useEffect(() => {
-        customFetch(1000, productos)
-        .then (res => setItem(res.find(detail => detail.id === parseFloat(id))))
-        // .then (res => setItem(id)))
+        const basededatos = getFirestore();
+        const detailMostrado = doc(basededatos, "productos", id)
+        getDoc(detailMostrado).then((snapshot)=>{
+            if(snapshot.exists()){
+                setItem({id: snapshot.id, ...snapshot.data()})
+            }
+        })
         .catch (console.log ("Algo esta maliendo sal"))
         .finally()
     },[id])
