@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Item ({titulo, foto, precio, id}){
     return(
-        <article>
+        <article className="articulo">
             <Link to={`/item/${id}`}>
             <img src={foto} alt={"foto del producto"}/>
             <h2>{titulo}</h2>
