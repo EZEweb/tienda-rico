@@ -1,24 +1,24 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import { React, useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
 // import customFetch from '../recursos/customFetch'
 // import productos from '../recursos/productos'
 import { useParams } from 'react-router-dom'
-import { doc, getDoc,getFirestore } from "firebase/firestore";
+import { getFirestore, getDoc, doc } from "firebase/firestore";
+
 function ItemDetailContainer () {
     let [item, setItem] = useState()
     const {id} = useParams ([])
 
     useEffect(() => {
         const basededatos = getFirestore();
-        const detailMostrado = doc(basededatos, "productos", id)
-        getDoc(detailMostrado).then((snapshot)=>{
+        const detalleMostrado = doc(basededatos, "productos", id)
+        getDoc(detalleMostrado).then((snapshot)=>{
             if(snapshot.exists()){
                 setItem({id: snapshot.id, ...snapshot.data()})
             }
         })
-        .catch (console.log ("Algo esta maliendo sal"))
-        .finally()
+        .catch (console.log ("Error al cargar"))
+        .finally(<div className="loader"></div>)
     },[id])
     return (
         <div className="containerPaginaDetalle">
@@ -30,5 +30,3 @@ function ItemDetailContainer () {
 }
 
 export default ItemDetailContainer;
-
-// .then (res => setItem(res.find(detail => detail.id === `${id}`)))

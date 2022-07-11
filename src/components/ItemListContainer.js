@@ -1,29 +1,37 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import { React, useEffect, useState }from 'react'
 import ItemList from './ItemList'
 // import customFetch from '../recursos/customFetch'
 // import productos from '../recursos/productos'
-// import { useParams } from 'react-router-dom'
-    // const {categoria} = useParams()
-import {collection,getDocs,getFirestore} from 'firebase/firestore'
+import { useParams } from 'react-router-dom'
+import { getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
 
 function ItemListContainer () {
     let [items, setItems] = useState([])
-    //ojo a partir de aqui
+    let [filtro,setFiltro] = useState("")
+    let {categoria} = useParams()
+    useEffect(()=>{
+        setFiltro(categoria || "")
+    },[categoria])
+
     useEffect(() => {
-        const basededatos = getFirestore();
-        const itemsCollection = collection(basededatos, "productos")
-        getDocs(itemsCollection).then((snapshot)=>{
-            if(snapshot.size===0){
-                console.log ("está vacio esto che");
-            }
-                setItems(snapshot.docs.map((doc) =>({id: doc.id, ...doc.data()})));
-            })
-            .catch (console.log ())
+        let basededatos = getFirestore();
+        let itemsCollection = collection(basededatos, "productos")
+        if(filtro === ""){
+            getDocs(itemsCollection)
+            .then((snapshot)=>{
+                setItems(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))})
+            .catch (console.log ("Error al cargar"))
             .finally(<div className="loader"></div>)
-        },[]);
-    //     customFetch(1000, productos)
-    //     .then(resultado =>{categoria ? setItems (resultado.filter(items => items.categoria=== categoria)): setItems(resultado)})
+        }else {
+            let q = query(itemsCollection,where('categoria','==',filtro));
+            getDocs(q)
+            .then((snapshot)=>{
+                if(snapshot.length===0){console.log()}
+                setItems(snapshot.docs.map((doc)=>({id:doc.id,...doc.data()})))})
+            .catch (console.log ("Error al cargar"))
+            .finally(<div className="loader"></div>)
+        }},[filtro]);
+
     return (
         <div className="containerPagina">
             {
