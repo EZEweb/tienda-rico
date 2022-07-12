@@ -7,30 +7,26 @@ import { getFirestore, getDocs, collection, query, where} from 'firebase/firesto
 
 function ItemListContainer () {
     let [items, setItems] = useState([])
-    let [filtro,setFiltro] = useState("")
     let {categoria} = useParams()
-    useEffect(()=>{
-        setFiltro(categoria || "")
-    },[categoria])
 
     useEffect(() => {
         let basededatos = getFirestore();
         let itemsCollection = collection(basededatos, "productos")
-        if(filtro === ""){
+        if(items.length === 0){
             getDocs(itemsCollection)
             .then((snapshot)=>{
                 setItems(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))})
             .catch (console.log ("Error al cargar"))
             .finally(<div className="loader"></div>)
         }else {
-            let q = query(itemsCollection,where('categoria','==',filtro));
+            let q = query(itemsCollection,where('categoria','==',`${categoria}`));
             getDocs(q)
             .then((snapshot)=>{
                 if(snapshot.length===0){console.log()}
                 setItems(snapshot.docs.map((doc)=>({id:doc.id,...doc.data()})))})
             .catch (console.log ("Error al cargar"))
             .finally(<div className="loader"></div>)
-        }},[filtro]);
+        }},[items]);
 
     return (
         <div className="containerPagina">
