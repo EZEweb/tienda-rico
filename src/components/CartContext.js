@@ -27,8 +27,10 @@ export const CartContextProvider = ({children})=>{
         setItemsCart (itemsCart.filter((item)=>item.id !== remove ))
     }//aca remuevo lo seleccionado en el array //acortado
 
+    const preciototal = itemsCart.reduce((total, item) =>  (item.precio * item.cantidad) + total, 0)
+
     return(
-        <CartContext.Provider value={{addItem,clear,removeItem,isInCart,itemsCart}}>
+        <CartContext.Provider value={{addItem,clear,removeItem,isInCart, preciototal, itemsCart}}>
             {children}
         </CartContext.Provider>
     )//aca se lo mando a les hijes

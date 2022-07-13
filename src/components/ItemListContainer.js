@@ -1,7 +1,5 @@
 import { React, useEffect, useState }from 'react'
 import ItemList from './ItemList'
-// import customFetch from '../recursos/customFetch'
-// import productos from '../recursos/productos'
 import { useParams } from 'react-router-dom'
 import { getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
 
@@ -11,22 +9,30 @@ function ItemListContainer () {
 
     useEffect(() => {
         let basededatos = getFirestore();
-        let itemsCollection = collection(basededatos, "productos")
-        if(items.length === 0){
-            getDocs(itemsCollection)
-            .then((snapshot)=>{
-                setItems(snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()})))})
-            .catch (console.log ("Error al cargar"))
+        let itemsContainer = collection(basededatos, "productos")
+        const listado = query(itemsContainer)
+        const listadoPorCategoria = query(itemsContainer, where("categoria", "==", `${categoria}`))
+        if(categoria){
+            getDocs(listadoPorCategoria)
+            .then((snapshot) =>{
+                if(snapshot.size === 0){
+                    console.log ("Error al  cargar");
+                }
+            setItems(snapshot.docs.map((doc) =>
+                ({id: doc.id, ...doc.data()})))})
+            .catch(err => console.log(err))
             .finally(<div className="loader"></div>)
-        }else {
-            let q = query(itemsCollection,where('categoria','==',`${categoria}`));
-            getDocs(q)
+        }else{
+            getDocs(listado)
             .then((snapshot)=>{
-                if(snapshot.length===0){console.log()}
-                setItems(snapshot.docs.map((doc)=>({id:doc.id,...doc.data()})))})
-            .catch (console.log ("Error al cargar"))
+                if(snapshot.length===0){
+                    console.log("Error al  cargar")
+                }
+            setItems(snapshot.docs.map((doc)=>
+                ({id:doc.id,...doc.data()})))})
+            .catch(err => console.log(err))
             .finally(<div className="loader"></div>)
-        }},[items]);
+        }},[]);
 
     return (
         <div className="containerPagina">

@@ -6,9 +6,7 @@ import Matesito from './imagenes/matesito.png'
 import { Link } from 'react-router-dom'
 
 const Cart=()=>{
-    const {clear,itemsCart,removeItem} = useContext(CartContext)//traigo x context la funcion clear y los estados itemsCart y totalprice
-    // const precioporitem = itemsCart.reduce((item) => (item.precio * item.contador) * item.contador)
-    const preciototal = itemsCart.reduce((total, item) =>  (item.precio * item.cantidad) + total, 0)
+    const {clear,itemsCart, preciototal, removeItem} = useContext(CartContext)//traigo x context la funcion clear y los estados itemsCart y preciototal
     
     return (
         <>
@@ -37,6 +35,9 @@ const Cart=()=>{
                 <Link to='/Home'>
                     <img src={Matesito} alt="foto del inicio"/>
                     <button className='button'>Volver al inicio</button>
+                </Link>
+                <Link to={'/ConfirmarCompra'}>
+                    <button className='button'>Confirmar compra</button>
                 </Link>
                 </div>
             }
