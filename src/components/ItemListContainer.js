@@ -4,14 +4,14 @@ import { useParams } from 'react-router-dom'
 import { getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
 
 function ItemListContainer () {
-    let [items, setItems] = useState([])
+    let [items, setItems] = useState ([])
     let {categoria} = useParams()
 
     useEffect(() => {
         let basededatos = getFirestore();
         let itemsContainer = collection(basededatos, "productos")
-        const listado = query(itemsContainer)
-        const listadoPorCategoria = query(itemsContainer, where("categoria", "==", `${categoria}`))
+        let listado = query(itemsContainer)
+        let listadoPorCategoria = query(itemsContainer, where("categoria", "==", `${categoria}`))
         if(categoria){
             getDocs(listadoPorCategoria)
             .then((snapshot) =>{
@@ -21,18 +21,16 @@ function ItemListContainer () {
             setItems(snapshot.docs.map((doc) =>
                 ({id: doc.id, ...doc.data()})))})
             .catch(err => console.log(err))
-            .finally(<div className="loader"></div>)
         }else{
             getDocs(listado)
             .then((snapshot)=>{
-                if(snapshot.length===0){
+                if(snapshot.size===0){
                     console.log("Error al  cargar")
                 }
             setItems(snapshot.docs.map((doc)=>
                 ({id:doc.id,...doc.data()})))})
             .catch(err => console.log(err))
-            .finally(<div className="loader"></div>)
-        }},[]);
+        }},[categoria]);
 
     return (
         <div className="containerPagina">
