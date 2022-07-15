@@ -32,7 +32,7 @@ div img{
   background: black;
   display: grid;
   height: auto;
-  grid-template-columns: 30%;
+  grid-template-columns: 50%;
   gap: 50%;
   margin:1em;
   padding: 10% 0 10% 0;
@@ -41,6 +41,9 @@ div img{
   justify-content: center;
 }
 
+.formulario{
+  padding: 5% 0 5% 0;
+}
 .formulario label{
   text-align: left;
   display: flex;
@@ -52,6 +55,10 @@ div img{
   text-align: left;
   display: flex;
   padding: 2%;
+}
+
+.formulario input{
+  color:black;
 }
 
 div ul {
