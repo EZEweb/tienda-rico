@@ -10,6 +10,7 @@ const ConfirmarCompra = () => {
     let navigate = useNavigate()
     let basededatos = getFirestore()
 
+    let [ordenid, setOrdenId] = useState ()
     let [envio, setEnvio] = useState(false)
     let [nombre, setNombre] = useState("")
     let [apellido, setApellido] = useState("")
@@ -25,37 +26,40 @@ const ConfirmarCompra = () => {
         }
         let coleccion = collection(basededatos, "ordenes")
         let ordenesListado = (coleccion)
+        
         addDoc(ordenesListado, orden)
-        .then(() => {
+        .then(({id}) => {
+            setOrdenId(id);
             setTimeout(()=>{
                 clear();
                 navigate('/Home')
-            }, 2000)
+            }, 5000)
         })
         .catch((err) => console.log(err))
     }
 
-    let handleSubmit = (e) =>{
+    let limpiarSubmit = (e) =>{
         e.preventDefault();
         enviarOrden(nombre, apellido, tel, mail);
     }
 
     return (
         <div className="containerFormulario">
-            <form className="formulario" onSubmit={handleSubmit}>
+            <form className="formulario" onSubmit={limpiarSubmit}>
                 <h3>Complete el formulario para confirmar su compra:</h3>
                 <p>Nombre</p>
-                <input onChange={(e) => setNombre(e.target.value)} value={nombre} type="text" id="nombre" name="nombre"/>
+                <input onChange={(e) => setNombre(e.target.value)} value={nombre} name="nombre"/>
                 <p>Apellido</p>
-                <input onChange={(e) => setApellido(e.target.value)} value={apellido} type="text" id="apellido" name="apellido"/>
+                <input onChange={(e) => setApellido(e.target.value)} value={apellido} name="apellido"/>
                 <p>Teléfono</p>
-                <input onChange={(e) => setTel(e.target.value)} value={tel} type="tel" id="telefono" name="telefono"/>
+                <input onChange={(e) => setTel(e.target.value)} value={tel} name="telefono"/>
                 <p>Mail</p>
-                <input onChange={(e) => setMail(e.target.value)} value={mail} type="mail" id="telefono" name="mail"/>
+                <input onChange={(e) => setMail(e.target.value)} value={mail} name="mail"/>
                 <p>El total es: ${preciototal}</p>
                 <div>
                     <button type='submit' onClick={()=>setEnvio(true)}> Enviar</button>
-                    {envio && <p>Gracias por tu compra :)</p>}
+                    {envio && <p>Gracias por tu compra :) Su id de compra es: {ordenid} Será redirigido a la página principal</p>}
+                    {console.log({ordenid})}
                 </div>
             </form>
         </div>
