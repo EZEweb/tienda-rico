@@ -1,6 +1,6 @@
 import React from "react"
 import { useContext, useState } from "react"
-import { getFirestore, addDoc, collection } from "firebase/firestore"
+import { getFirestore, addDoc, collection, updateDoc, doc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "./CartContext"
 
@@ -12,6 +12,12 @@ const ConfirmarCompra = () => {
 
     let [ordenid, setOrdenId] = useState ()
     let [envio, setEnvio] = useState(false)
+    // let [comprax, setComprax] = useState({
+    //     nombre: "",
+    //     apellido: "",
+    //     tel: "",
+    //     mail: "",
+    // })
     let [nombre, setNombre] = useState("")
     let [apellido, setApellido] = useState("")
     let [tel, setTel] = useState("")
@@ -36,6 +42,11 @@ const ConfirmarCompra = () => {
             }, 5000)
         })
         .catch((err) => console.log(err))
+
+        itemsCart.forEach((items) => {
+            let cambioStock = doc(basededatos, "productos", items.id)
+            updateDoc(cambioStock, { stock: items.stock - items.cantidad })
+        });
     }
 
     let limpiarSubmit = (e) =>{
@@ -67,3 +78,79 @@ const ConfirmarCompra = () => {
 }
 
 export default ConfirmarCompra
+
+// import React from "react"
+// import { useContext, useState } from "react"
+// import { getFirestore, addDoc, collection } from "firebase/firestore"
+// import { useNavigate } from "react-router-dom"
+// import { CartContext } from "./CartContext"
+
+// const ConfirmarCompra = () => {
+
+//     let {itemsCart, clear, preciototal} = useContext(CartContext)
+//     let navigate = useNavigate()
+//     let basededatos = getFirestore()
+
+//     let [ordenid, setOrdenId] = useState ()
+//     let [envio, setEnvio] = useState(false)
+//     let [pedido, setPedido] = useState({
+//         nombre: "",
+//         apellido: "",
+//         tel: "",
+//         mail: "",
+//     });
+
+//     let cargarSubmit = (e) =>{
+//         setPedido({ ...pedido, [e.target.name] : e.target.value}
+//         )
+//     }
+
+//     let enviarOrden = (nombre, apellido, tel, mail) =>{
+//         let date = new Date()
+//         let orden = {
+//             buyer: {nombre: nombre, apellido: apellido, tel: tel, mail: mail},
+//             items: [{...itemsCart}],
+//             date: date
+//         }
+//         let coleccion = collection(basededatos, "ordenes")
+//         let ordenesListado = (coleccion)
+        
+//         addDoc(ordenesListado, orden)
+//         .then(({id}) => {
+//             setOrdenId(id);
+//             setTimeout(()=>{
+//                 clear();
+//                 navigate('/Home')
+//             }, 5000)
+//         })
+//         .catch((err) => console.log(err))
+//     }
+
+//     let limpiarSubmit = (e) => {
+//         e.preventDefault();
+//         enviarOrden(pedido);
+//     }
+//     return (
+//         <div className="containerFormulario">
+//             <form className="formulario" onSubmit={limpiarSubmit}>
+//                 <h3>Complete el formulario para confirmar su compra:</h3>
+//                 <p>Nombre</p>
+//                 <input onChange={cargarSubmit} name="nombre" value={pedido.nombre}/>
+//                 <p>Apellido</p>
+//                 <input onChange={cargarSubmit} name="apellido" value={pedido.apellido}/>
+//                 <p>Teléfono</p>
+//                 <input onChange={cargarSubmit} name="tel" value={pedido.tel}/>
+//                 <p>Mail</p>
+//                 <input onChange={cargarSubmit} name="mail" value={pedido.mail}/>
+//                 <p>El total es: ${preciototal}</p>
+//                 <div>
+//                     <button type='submit' onClick={()=>setEnvio(true)}> Enviar</button>
+//                     {envio && <p>Gracias por tu compra :) Su id de compra es: {ordenid} Será redirigido a la página principal</p>}
+//                     {console.log({ordenid})}
+//                 </div>
+//             </form>
+//         </div>
+//     )
+// }
+
+// export default ConfirmarCompra
