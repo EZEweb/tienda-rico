@@ -9,6 +9,7 @@ import CartContextProvider from './components/CartContext';
 import Cart from './components/Cart';
 import Categoria from './components/Categoria';
 import ConfirmarCompra from './components/ConfirmarCompra';
+import Redes from "./components/Redes"
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/item/:id" element={<ItemDetailContainer/>}/>
                 <Route path="/Home" element={<Home/>}/>
                 <Route path="/cart" element={<Cart/>}/>
+                <Route path="/redes" element={<Redes/>}/>
                 <Route path="/confirmarcompra" element={<ConfirmarCompra/>}/>
             </Routes>
         <MiFooter/>

@@ -1,12 +1,42 @@
-* {
+*{
 	margin: 0;
 	border: 0;
 	box-sizing: border-box;
 	text-decoration: none;
-	font-family: Lucida Console;
+	font-family: "Lucida Console";
 	src: url(\lucon.ttf);
 	color: white;
 	list-style:none;
+}
+
+h1{
+  font-family: 'Press Start 2P', cursive;
+	src: url(./PRESSSTART2P-REGULAR.TTF);
+  color: #f2f096;
+}
+
+.inicio{
+    background: black;
+    display: grid;
+    grid-template-columns: 40%;
+    padding: 5% 0 5% 0;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.inicio div{
+    background: #007b7b;
+    border: outset #f2f096  10px;
+    padding: 10%;
+}
+
+.inicio div a{
+    padding: 15%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
 }
 
 div img{
@@ -34,7 +64,6 @@ div img{
   height: auto;
   grid-template-columns: 50%;
   gap: 50%;
-  margin:1em;
   padding: 10% 0 10% 0;
   align-items: center;
   justify-items: center;
@@ -107,7 +136,6 @@ div ul li{
   height: auto;
   grid-template-columns: 33% 33% 33%;
   gap: 1em;
-  margin:1em;
   padding: 10% 2% 10% 2%;
   align-items: center;
   justify-items: center;
@@ -155,7 +183,6 @@ div ul li{
   height: 30em;
   grid-template-columns: 50% 50%;
   gap: 1em;
-  margin:1em;
   padding: 2%;
   align-items: center;
   justify-items: center;
