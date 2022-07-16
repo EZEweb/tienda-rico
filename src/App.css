@@ -184,10 +184,10 @@ button {
  button::before {
   content: '';
   position: absolute;
-  top: 14%;
-  left: 1rem;
-  transition: 0.15s ease-in-out;
-  background-color: rgba(0, 255, 0, 0.5);
+  /* top: 14%;
+  left: 1rem; */
+  /* transition: 0.15s ease-in-out;
+  background-color: rgba(0, 255, 0, 0.5); */
   width: 100%;
   height: 100%;
   color: black;

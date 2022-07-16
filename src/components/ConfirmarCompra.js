@@ -12,12 +12,6 @@ const ConfirmarCompra = () => {
 
     let [ordenid, setOrdenId] = useState ()
     let [envio, setEnvio] = useState(false)
-    // let [comprax, setComprax] = useState({
-    //     nombre: "",
-    //     apellido: "",
-    //     tel: "",
-    //     mail: "",
-    // })
     let [nombre, setNombre] = useState("")
     let [apellido, setApellido] = useState("")
     let [tel, setTel] = useState("")
@@ -81,7 +75,7 @@ export default ConfirmarCompra
 
 // import React from "react"
 // import { useContext, useState } from "react"
-// import { getFirestore, addDoc, collection } from "firebase/firestore"
+// import { getFirestore, addDoc, collection, updateDoc, doc } from "firebase/firestore"
 // import { useNavigate } from "react-router-dom"
 // import { CartContext } from "./CartContext"
 
@@ -90,25 +84,25 @@ export default ConfirmarCompra
 //     let {itemsCart, clear, preciototal} = useContext(CartContext)
 //     let navigate = useNavigate()
 //     let basededatos = getFirestore()
-
 //     let [ordenid, setOrdenId] = useState ()
+
 //     let [envio, setEnvio] = useState(false)
-//     let [pedido, setPedido] = useState({
+//     const [comprax, setComprax] = useState({
 //         nombre: "",
 //         apellido: "",
 //         tel: "",
 //         mail: "",
-//     });
+//     })
 
-//     let cargarSubmit = (e) =>{
-//         setPedido({ ...pedido, [e.target.name] : e.target.value}
-//         )
+//     let cargaCompra= (e) => {
+//         setComprax ({...comprax, [e.target.name]:e.target.value })
 //     }
 
-//     let enviarOrden = (nombre, apellido, tel, mail) =>{
+//     let enviarOrden = (e) =>{
+//         e.preventDefault();
 //         let date = new Date()
 //         let orden = {
-//             buyer: {nombre: nombre, apellido: apellido, tel: tel, mail: mail},
+//             buyer: comprax,
 //             items: [{...itemsCart}],
 //             date: date
 //         }
@@ -124,24 +118,31 @@ export default ConfirmarCompra
 //             }, 5000)
 //         })
 //         .catch((err) => console.log(err))
+
+//         itemsCart.forEach((items) => {
+//             let cambioStock = doc(basededatos, "productos", items.id)
+//             updateDoc(cambioStock, { stock: items.stock - items.cantidad })
+//         });
+
+//         setComprax({nombre:"", apellido:"", mail:"", tel:""})
 //     }
 
-//     let limpiarSubmit = (e) => {
-//         e.preventDefault();
-//         enviarOrden(pedido);
+//     let limpiarSubmit = () =>{
+//         enviarOrden();
 //     }
+
 //     return (
 //         <div className="containerFormulario">
 //             <form className="formulario" onSubmit={limpiarSubmit}>
 //                 <h3>Complete el formulario para confirmar su compra:</h3>
 //                 <p>Nombre</p>
-//                 <input onChange={cargarSubmit} name="nombre" value={pedido.nombre}/>
+//                 <input onChange={cargaCompra} value={comprax.nombre} name="nombre"/>
 //                 <p>Apellido</p>
-//                 <input onChange={cargarSubmit} name="apellido" value={pedido.apellido}/>
+//                 <input onChange={cargaCompra} value={comprax.apellido} name="apellido"/>
 //                 <p>Teléfono</p>
-//                 <input onChange={cargarSubmit} name="tel" value={pedido.tel}/>
+//                 <input onChange={cargaCompra} value={comprax.tel} name="telefono"/>
 //                 <p>Mail</p>
-//                 <input onChange={cargarSubmit} name="mail" value={pedido.mail}/>
+//                 <input onChange={cargaCompra} value={comprax.mail} name="mail"/>
 //                 <p>El total es: ${preciototal}</p>
 //                 <div>
 //                     <button type='submit' onClick={()=>setEnvio(true)}> Enviar</button>
