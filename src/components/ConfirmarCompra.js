@@ -21,13 +21,12 @@ const ConfirmarCompra = () => {
         let date = new Date()
         let orden = {
             buyer: {nombre: nombre, apellido: apellido, tel: tel, mail: mail},
-            items: [{...itemsCart}],
+            items: [...itemsCart],
             date: date
         }
         let coleccion = collection(basededatos, "ordenes")
-        let ordenesListado = (coleccion)
         
-        addDoc(ordenesListado, orden)
+        addDoc(coleccion, orden)
         .then(({id}) => {
             setOrdenId(id);
             setTimeout(()=>{
