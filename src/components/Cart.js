@@ -10,9 +10,8 @@ const Cart=()=>{
     
     return (
         <>
-            {console.log(itemsCart)}
-            {itemsCart.length===0//condicion x si el array está vacio
-                ?<EmptyCart/>//si la condición se cumple (el carro está vacio), se despliega ese componente
+            {itemsCart.length===0
+                ?<EmptyCart/>
                 :<div className='containerPagina'>
                 {itemsCart.map((venta) => (
                         <div key={venta.id}>

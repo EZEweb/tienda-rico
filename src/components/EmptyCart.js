@@ -10,6 +10,6 @@ const EmptyCart = () => {
             <img src={Matesito} alt="foto del carrito"/>
         </Link>
     </div>
-}// esto es solo para cuando el carrito está vacio
+}
 
 export default EmptyCart;

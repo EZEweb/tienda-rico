@@ -10,7 +10,6 @@ function ItemDetail (item){
     const {titulo,foto,precio,id,inicial,stock}=item
     const [contador,setContador] = useState(0)
     const {addItem} = useContext(CartContext)
-    console.log (contador);
  
     const onAdd = (cantidad)=>{
         setContador(cantidad)
