@@ -31,9 +31,9 @@ const Cart=()=>{
                 </h3>
                 <button onClick={clear} className='button'>Borrar Todo</button>
                 </div>
-                <Link to='/Home'>
+                <Link to='/itemlistcontainer'>
                     <img src={Matesito} alt="foto del inicio"/>
-                    <button className='button'>Volver al inicio</button>
+                    <button className='button'>Volver a la tienda</button>
                 </Link>
                 <Link to='/ConfirmarCompra'>
                     <button className='button'>Confirmar compra</button>

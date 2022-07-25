@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const MiNav = () => {
     return (
         <div className="MiNav">
-            <Link to="/"><ImagenLogo/></Link>
+            <Link to="/itemlistcontainer"><ImagenLogo/></Link>
             <ul>
                 <li><Link to='/categoria/afiches'>afiches</Link></li>
                 <li><Link to='/categoria/pines'>pines</Link></li>
