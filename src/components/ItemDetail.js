@@ -24,6 +24,7 @@ function ItemDetail (item){
             <h2>${precio}</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             <br></br>
+            <h4>Hay {stock} disponible</h4>
             {contador
             ?<Link to='/Cart'><button>Ir a mi carrito</button></Link>
             :<ItemCount inicial={inicial} stock={stock} onAdd={onAdd} addItem={addItem} />}

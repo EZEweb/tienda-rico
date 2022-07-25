@@ -6,7 +6,7 @@ import Matesito from './imagenes/matesito.png'
 import { Link } from 'react-router-dom'
 
 const Cart=()=>{
-    const {clear,itemsCart, preciototal, removeItem} = useContext(CartContext)//traigo x context la funcion clear y los estados itemsCart y preciototal
+    const {clear,itemsCart, precioTotal, removeItem} = useContext(CartContext)
     
     return (
         <>
@@ -27,7 +27,7 @@ const Cart=()=>{
                 }
                 <div>
                 <h3>
-                    Valor total ${preciototal}
+                    Valor total ${precioTotal}
                 </h3>
                 <button onClick={clear} className='button'>Borrar Todo</button>
                 </div>

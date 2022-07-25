@@ -15,8 +15,8 @@ function ItemDetailContainer () {
                 setItem({id: snapshot.id, ...snapshot.data()})
             }
         })
-        .catch(err => console.log(err))
-        .finally(<div className="loader"></div>)
+        .catch((err) => console.log(err))
+        .finally((fin) => console.log(fin))
     },[id])
     return (
         <div className="containerPaginaDetalle">

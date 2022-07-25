@@ -20,7 +20,8 @@ function ItemListContainer () {
                 }
             setItems(snapshot.docs.map((doc) =>
                 ({id: doc.id, ...doc.data()})))})
-            .catch(err => console.log(err))
+            .catch((err) => console.log(err))
+            .finally((fin) => console.log(fin))
         }else{
             getDocs(listado)
             .then((snapshot)=>{
@@ -30,6 +31,7 @@ function ItemListContainer () {
             setItems(snapshot.docs.map((doc)=>
                 ({id:doc.id,...doc.data()})))})
             .catch(err => console.log(err))
+            .finally(fin => console.log(fin))
         }},[categoria]);
 
     return (

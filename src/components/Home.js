@@ -6,9 +6,9 @@ function Home () {
         <div className="inicio">
             <div>
             <h1>Hola <br></br>mundo_</h1>
-            <a><Link to="/redes">Redes</Link></a>
-            <a><Link to="/">Tienda</Link></a>
-            <a>Contacto</a>
+            <Link to="/redes">Redes</Link>
+            <Link to="/">Tienda</Link>
+            <Link to="/">Contacto</Link>
             </div>
         </div>
     )
