@@ -2,6 +2,7 @@ import { React, useEffect, useState }from 'react'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import { getFirestore, getDocs, collection, query, where} from 'firebase/firestore'
+import {NavBar} from './NavBar';
 
 function ItemListContainer () {
     let [items, setItems] = useState ([])
@@ -35,11 +36,14 @@ function ItemListContainer () {
         }},[categoria]);
 
     return (
+        <>
+        <NavBar/>
         <div className="containerPagina">
             {
                 items?.length <= 1 ? <div className="loader"></div> : <ItemList productos = {items}/>
             }
         </div>
+        </>
     )
 }
 

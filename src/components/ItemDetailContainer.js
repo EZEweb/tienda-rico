@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import { getFirestore, getDoc, doc } from "firebase/firestore";
+import {NavBar} from './NavBar';
 
 function ItemDetailContainer () {
     let [item, setItem] = useState()
@@ -19,11 +20,14 @@ function ItemDetailContainer () {
         .finally((fin) => console.log(fin))
     },[id])
     return (
+        <>
+        <NavBar/>
         <div className="containerPaginaDetalle">
             {
                 item? <ItemDetail {...item}/> : <div className="loader"></div>
             }
         </div>
+        </>
     )
 }
 

@@ -4,12 +4,14 @@ import {useContext} from 'react'
 import EmptyCart from './EmptyCart'
 import Matesito from './imagenes/matesito.png'
 import { Link } from 'react-router-dom'
+import {NavBar} from './NavBar';
 
 const Cart=()=>{
     const {clear,itemsCart, precioTotal, removeItem} = useContext(CartContext)
     
     return (
         <>
+            <NavBar/>
             {itemsCart.length===0
                 ?<EmptyCart/>
                 :<div className='containerPagina'>
@@ -29,14 +31,14 @@ const Cart=()=>{
                 <h3>
                     Valor total ${precioTotal}
                 </h3>
-                <button onClick={clear} className='button'>Borrar Todo</button>
+                <button onClick={clear}>Borrar Todo</button>
                 </div>
                 <Link to='/itemlistcontainer'>
                     <img src={Matesito} alt="foto del inicio"/>
-                    <button className='button'>Volver a la tienda</button>
+                    <button>Volver a la tienda</button>
                 </Link>
                 <Link to='/ConfirmarCompra'>
-                    <button className='button'>Confirmar compra</button>
+                    <button>Confirmar compra</button>
                 </Link>
                 </div>
             }

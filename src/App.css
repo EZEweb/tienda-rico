@@ -5,20 +5,22 @@
 	text-decoration: none;
 	font-family: "Lucida Console";
 	src: url(\lucon.ttf);
-	color: white;
+	color: #f2f096;
 	list-style:none;
+    background: black;
 }
 
 h1{
-  font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive;
 	src: url(./PRESSSTART2P-REGULAR.TTF);
-  color: #f2f096;
+    color: #f2f096;
+    background: none;
 }
 
 .inicio{
     background: black;
-    display: grid;
-    grid-template-columns: 40%;
+    display: flex;
+    width: 100%;
     padding: 5% 0 5% 0;
     align-items: center;
     justify-items: center;
@@ -27,47 +29,58 @@ h1{
 
 .inicio div{
     background: #007b7b;
-    border: outset #f2f096  10px;
-    padding: 10%;
+    border: outset #c84b0b  10px;
+    padding: 5%;
+    width: 30%;
+}
+
+.inicio div p{
+    background: none;
 }
 
 .inicio div a{
-    padding: 15%;
-    display: grid;
+    padding: 10%;
+    display: flex;
     align-items: center;
     justify-items: center;
     justify-content: center;
+    background: none;
+    width: 100%;
 }
 
 div img{
-  width: 10em;
+    width: 10em;
 }
 
-.MiNav img{
-  padding: 1.5em;
-  position: absolute;
+.navbar img{
+    padding: 1.5em;
+    position: absolute;
 }
+
+/* .navbar .responsive{
+  display: none;
+} */
 
 .botoncarrito p{
-  color: white;
+    color: white;
 }
 
 .botoncarrito img{
-  width: 6rem;
-  margin: -4% 0 -1% 0;
-  position: absolute;
+    width: 6rem;
+    margin: -4% 0 -1% 0;
+    position: absolute;
 }
 
 .containerFormulario{
-  background: black;
-  display: grid;
-  height: auto;
-  grid-template-columns: 50%;
-  gap: 50%;
-  padding: 10% 0 10% 0;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
+    background: black;
+    display: grid;
+    height: auto;
+    grid-template-columns: 50%;
+    gap: 50%;
+    padding: 10% 0 10% 0;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
 }
 
 .formulario{
@@ -145,7 +158,7 @@ div ul li{
   padding: 5%;
 }
 .containerPagina .articulo:hover{
-  background-color:rgb(0, 255, 0) ;
+  background-color:#82ce13;
   transition: 0.3s ease-in-out;
   color: #000;
 }
@@ -202,7 +215,7 @@ button {
   font-size: 15px;
   outline: none;
   border: 2px solid white;
-  background-color: rgba(0, 255, 0, 1);
+  background-color: #82ce13;
   color: black;
   position: relative;
   margin: 1%;
@@ -258,7 +271,7 @@ section{
 }
 
 section > article{
-  background: black;
+  background: none;
   display: grid;
   margin:1em;
   height: auto;
@@ -319,23 +332,24 @@ transition: 0.5s ease-in-out;
   *{
     background-color: black;
   }
-  
+
   .botoncarrito img{
     width: 100%;
     margin-top: -2%;
     position: absolute;
   }
 
-  .MiNav{
+  .navbar{
     height: auto;
     width: auto;
+    background: none;
   }
 
-  .MiNav img{
+  .navbar img{
     position: relative;
     width: 8rem;
   }
-
+  
   div{
     display: grid;
     justify-content: center;
@@ -367,8 +381,12 @@ transition: 0.5s ease-in-out;
     height: auto;
   }
 
+  .inicio div{
+    width: 100%;
+    padding: 100px;
+  }
+
   .footer{
-    background-color: white;
     width: auto;
     height: auto;
     display: grid;
@@ -380,5 +398,10 @@ transition: 0.5s ease-in-out;
 @media (max-width: 600px) {
   .footer{
     grid-template-columns: 100%;
+  }
+    
+  .inicio div{
+    width: 100%;
+    padding: 30px;
   }
 }

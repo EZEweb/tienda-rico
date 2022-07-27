@@ -3,6 +3,7 @@ import { useContext, useState } from "react"
 import { getFirestore, addDoc, collection, updateDoc, doc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
 import { CartContext } from "./CartContext"
+import {NavBar} from './NavBar';
 
 const ConfirmarCompra = () => {
 
@@ -54,6 +55,8 @@ const ConfirmarCompra = () => {
     }
 
     return (
+        <>
+        <NavBar/>
         <div className="containerFormulario">
             <form className="formulario" onSubmit={enviarOrden}>
                 <h3>Complete el formulario para confirmar su compra:</h3>
@@ -72,6 +75,7 @@ const ConfirmarCompra = () => {
                 </div>
             </form>
         </div>
+        </>
     )
 }
 
