@@ -1,7 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {NavBar} from './components/NavBar';
-import {MiFooter} from './components/FooterBar';
 import Home from './components/Home';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
