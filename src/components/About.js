@@ -12,7 +12,7 @@ function About () {
                     Mi nombre es Ezequiel y soy un diseñador y desarrollador Front-end de La Costa, Buenos Aires, 
                     Argentina. Me encanta dedicarme a hacer proyectos funcionales y estéticamente cuidados.
                 </p>
-                <Link to='/Home'>
+                <Link to='/tienda-rico'>
                     <button>Volver atras</button>
                 </Link> 
             </div>

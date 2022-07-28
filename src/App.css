@@ -7,14 +7,20 @@
 	src: url(\lucon.ttf);
 	color: #f2f096;
 	list-style:none;
-    background: black;
 }
 
 h1{
     font-family: 'Press Start 2P', cursive;
-	src: url(./PRESSSTART2P-REGULAR.TTF);
+	  src: url(./PRESSSTART2P-REGULAR.TTF);
     color: #f2f096;
-    background: none;
+}
+
+body{
+  background: black;
+}
+
+.navbar .responsive ul li:hover{
+  background-color: #c84b0b;
 }
 
 .inicio{
@@ -57,6 +63,11 @@ div img{
     position: absolute;
 }
 
+.navbar h1{
+  position: absolute;
+  padding: 0.5em;
+}
+
 .botoncarrito p{
     color: white;
 }
@@ -97,6 +108,7 @@ div img{
 
 .formulario input{
   color:black;
+  background-color: white;
 }
 
 div ul {
@@ -107,36 +119,6 @@ div ul {
 
 div ul li{
   padding: 2em;
-}
-
-.footer div ul {
-  padding-left: 0;
-}
-
-
-.footer{
-  display: grid;
-  padding: 2%;
-  background-color: black;
-  width: 100%;
-  height: 15%;
-  bottom: 0;
-  position: relative;
-  grid-template-columns: 50% 50%;
-}
-
-.footer img{
-  width: 2rem;
-}
-
-.bajadita{
-	display:grid;
-  padding:2%;
-}
-
-.redes{
-  display:grid;
-  padding:2%;
 }
 
 .containerPagina {
@@ -232,45 +214,6 @@ button {
   grid-template-columns: 50% 25% 25%;
 }
 
-@keyframes fill {
-  0% {
-    box-shadow: 0 0  inset;
-  }
-  100% {
-    box-shadow: 0 -48px inset;
-  }
-}
-
-section{
-  display: grid;
-  grid-template-columns: repeat(3,1fr); 
-  gap: 1em;
-}
-
-section > article{
-  background: none;
-  display: grid;
-  margin:1em;
-  height: auto;
-}
-
-section > article h2 {
-  color:#ffffff;
-  padding: 0.5em;
-  font-size: 1.5em;
-  margin-bottom: 0.1em;
-}
-
-section article img{
-  display: grid;
-  position: relative;
-  width: 10%;
-}
-
-section > article p {
-  padding: 1em;
-}
-
 .headerContainer {
   display: flex;
   align-items: center;
@@ -283,34 +226,12 @@ section > article p {
   border: none;
   text-transform: none;
 }
+
 .headerContainer .h2{
   font-size: clamp(2rem,100%,3.75rem);
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  width: 100%;
-  row-gap: 2em;
-  padding-bottom: 1em;
-}
-.gridContainer .article {
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.gridContainer .article .img {
-max-width: 100%;
-width: 20em;
-transition: 0.5s ease-in-out;
-}
-
 @media (max-width: 1000px) {
-  *{
-    background-color: black;
-  }
-
   .botoncarrito img{
     width: 100%;
     margin-top: -2%;
@@ -326,6 +247,10 @@ transition: 0.5s ease-in-out;
   .navbar img{
     position: relative;
     width: 8rem;
+  }
+
+  .navbar h1{
+    position: relative;
   }
   
   div{
@@ -363,20 +288,9 @@ transition: 0.5s ease-in-out;
     width: 100%;
     padding: 100px;
   }
-
-  .footer{
-    width: auto;
-    height: auto;
-    display: grid;
-    padding:2%;
-    bottom: 0;
-  }
 }
 
 @media (max-width: 600px) {
-  .footer{
-    grid-template-columns: 100%;
-  }
     
   .inicio div{
     width: 100%;

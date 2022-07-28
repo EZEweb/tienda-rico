@@ -41,7 +41,7 @@ const ConfirmarCompra = () => {
             setOrdenId(id);
             setTimeout(()=>{
                 clear();
-                navigate('/Home')
+                navigate('/tienda-rico')
             }, 5000)
         })
         .catch((err) => console.log(err))

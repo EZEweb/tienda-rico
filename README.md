@@ -11,3 +11,9 @@ https://ezeweb.github.io/tienda-rico/
 Mail: ezequielrico@outlook.com
 LinkedIn: https://www.linkedin.com/in/eze-web/
 Portfolio: https://www.behance.net/EZE_
+
+## Proceso de compra
+
+![Primer paso](http://lmsotfy.com/so.png)
+
+![stack Overflow](http://lmsotfy.com/so.png)
