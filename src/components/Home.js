@@ -8,8 +8,9 @@ function Home () {
             <div>
                 <Link to="/tienda-rico"><ImagenLogo/></Link>
                 <Link to="/redes">Redes</Link>
-                <Link to="/itemlistcontainer">Tienda</Link>
+                {/* <Link to="/itemlistcontainer">Tienda</Link> */}
                 <Link to="/about">About</Link>
+                {/* <Link to="/recursos">Recursos</Link> */}
             </div>
         </div>
     )

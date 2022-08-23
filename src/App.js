@@ -9,6 +9,7 @@ import Cart from './components/Cart';
 import About from './components/About';
 import ConfirmarCompra from './components/ConfirmarCompra';
 import Redes from "./components/Redes"
+import RecursosListContainer from './components/RecursosListContainer';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/cart" element={<Cart/>}/>
                 <Route path="/redes" element={<Redes/>}/>
                 <Route path='/about' element={<About/>}/>
+                <Route path="/recursos" element={<RecursosListContainer/>}/>
                 <Route path="/confirmarcompra" element={<ConfirmarCompra/>}/>
             </Routes>
 
