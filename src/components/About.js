@@ -8,6 +8,7 @@ function About () {
             <div>
             <ImgSobreMi/>
             <br></br>
+            <br></br>
                 <p>
                     ¡Hola!
                     Mi nombre es Ezequiel y soy un diseñador y desarrollador Front-end de La Costa, Buenos Aires, 
