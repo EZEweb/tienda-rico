@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 *{
 	margin: 0;
 	border: 0;
@@ -10,9 +12,9 @@
 }
 
 h1{
-    font-family: 'Press Start 2P', cursive;
-	  src: url(./PRESSSTART2P-REGULAR.TTF);
+    font-family: 'VT323', monospace;
     color: #f2f096;
+    font-size: 80px;
 }
 
 body{
@@ -37,16 +39,21 @@ body{
     width: 30%;
 }
 
+.inicio div h1{
+  padding: 5% 5% 5% 0;
+}
+
 .inicio div p{
     background: none;
+    padding: 10% 0 10% 0;
 }
 
 .inicio div a{
-    padding: 10%;
+    padding: 10% 10% 10% 0;
     display: flex;
     align-items: center;
     justify-items: center;
-    justify-content: center;
+    justify-content: left;
     background: none;
     width: 100%;
 }

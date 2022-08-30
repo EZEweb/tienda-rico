@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { ImgSobreMi } from './ImgSobreMi';
 
 function About () {
     return (
         <div className="inicio">
             <div>
-            <h1>Sobre mi</h1>
+            <ImgSobreMi/>
             <br></br>
                 <p>
                     ¡Hola!
