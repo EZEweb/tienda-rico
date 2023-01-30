@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/tienda-rico/static/css/main.6794e7b8.css",
-    "main.js": "/tienda-rico/static/js/main.f01d69f4.js",
+    "main.css": "/tienda-rico/static/css/main.8b4cca5e.css",
+    "main.js": "/tienda-rico/static/js/main.11936e1d.js",
     "static/media/lucon.ttf": "/tienda-rico/static/media/lucon.0dc2ebd9834d2170206c.ttf",
     "index.html": "/tienda-rico/index.html",
-    "main.6794e7b8.css.map": "/tienda-rico/static/css/main.6794e7b8.css.map",
-    "main.f01d69f4.js.map": "/tienda-rico/static/js/main.f01d69f4.js.map"
+    "main.8b4cca5e.css.map": "/tienda-rico/static/css/main.8b4cca5e.css.map",
+    "main.11936e1d.js.map": "/tienda-rico/static/js/main.11936e1d.js.map"
   },
   "entrypoints": [
-    "static/css/main.6794e7b8.css",
-    "static/js/main.f01d69f4.js"
+    "static/css/main.8b4cca5e.css",
+    "static/js/main.11936e1d.js"
   ]
 }
