@@ -10,7 +10,8 @@ function Home () {
                 <Link to="/redes">Redes</Link>
                 {/* <Link to="/itemlistcontainer">Tienda</Link> */}
                 <Link to="/about">Sobre mi</Link>
-                <Link to="/webs">Desarrollos web</Link>
+                <a href='https://drive.google.com/file/d/1vtoPi6vXlud0CGgRN_TL4qpCzdyWi25b/view' target="_blank" rel="noreferrer">Portfolio</a>
+                <Link to="/web">Desarrollos web</Link>
                 <a href="https://www.matecito.co/EZE_" target="_blank" rel="noreferrer">Donaciones</a>
                 {/* <Link to="/recursos">Recursos</Link> */}
             </div>
